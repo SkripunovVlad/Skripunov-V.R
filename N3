@@ -1,0 +1,51 @@
+a = int(input())    #1#
+b = int(input())
+c = int(input())
+sum = a + b + c
+print(a,b,c, sum)
+
+
+a = int(input())            #2#
+b = int(input())
+S = 1/2 * a*b
+print(S)
+
+def F(a, b, c):                     #5#
+    if (a > b) and (c > b):
+        return b
+    if (b > a) and (c > a):
+        return a
+    if (b > c) and (a > c):
+        return c
+
+
+def F(a, b, c):         #8#
+    if a == b == c:
+        return 3
+    if (a == b) or (b==c) or (c==a):
+        return 2
+    else:
+        return 0
+
+def F(n,m,k):       #9#
+    if (m*n)//k:
+        return Да
+    else:
+        return Нет
+
+
+
+
+def F(x):               #7#
+    if (x//4==0) and (x//100!=0) and (x//400!=0):
+        return Да
+
+
+def F(a,b,l,N):             #6#
+    return a+(2*a*N)+(2*b*N)+l
+
+def F(X):       #3#
+    chas = X//60
+    minut = X%60
+    return chas
+    return minut
