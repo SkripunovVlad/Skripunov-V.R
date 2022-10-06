@@ -1,1 +1,14 @@
+A = int(input())
+B = int(input())
+a = []
+if A < B:
+    for i in range(A, B+1):
+        print(i)
+if A < B:
+    for i in range(A, B+1):
+        a = [i]
+    print(a[i])
+if A < B:
+    a = a[i]
+    print(sorted(a, reverse=True))
 
