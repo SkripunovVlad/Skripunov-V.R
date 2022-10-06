@@ -1,14 +1,11 @@
-A = int(input())
-B = int(input())
-a = []
-if A < B:
-    for i in range(A, B+1):
-        print(i)
-if A < B:
-    for i in range(A, B+1):
-        a = [i]
-    print(a[i])
-if A < B:
-    a = a[i]
-    print(sorted(a, reverse=True))
-
+def count(a, b):
+    
+    if a<b:
+        count(a, b - 1)
+        print b
+    elif a>b:
+        print a
+        count(a - 1, b)
+a = input()
+b = input()
+count (a, b)
