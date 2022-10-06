@@ -1,1 +1,7 @@
+seconds =  int(input())
+dni = seconds//(60*60*24)
+ches = ((seconds-dni)//(60*60)
+minut = (((seconds-dni)- ches)//(60)
+sek = ((((seconds-dni)- ches)- minut)
+print(dni,':',ches,":", minut,":", sek)
 
