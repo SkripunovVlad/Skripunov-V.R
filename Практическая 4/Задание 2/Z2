@@ -1,11 +1,8 @@
-def count(a, b):
-    
-    if a<b:
-        count(a, b - 1)
-        print b
-    elif a>b:
-        print a
-        count(a - 1, b)
-a = input()
-b = input()
-count (a, b)
+a = int(input())
+b = int(input())
+if a < b:
+    for i in range(a, b + 1):
+        print(i)
+else:
+    for i in range(a, b - 1, -1):
+        print(i)
