@@ -1,1 +1,9 @@
-
+def F(X):       #3#
+    chas = X//60
+    if chas > 23:
+        return chas - 24
+    minut = X%60
+    if minut > 59:
+        return minut - 60
+        return chas + 1
+print(F(434321))
