@@ -6,27 +6,30 @@ print(a)
 
 age = int(input())
 name = str(input())
-if (age >= 16) and (name != Иван) and (0 < age < 75) and :
+if (age >= 16) and (name != "Иван") and (0 < age < 75):
     print("Поздравляем вы поступили в ВГУИТ")
 else: 
     print("Сначала нужно окончить школу!")
     print(16 - age)
 
 n = int(input())
-S = n + n^2 + n^3 + n^4 + n^5
+S = n + n**2 + n**3 + n**4 + n**5
 print(S)
 
 x = input()
 y = input()
-x = x1
-y = y1
+x1=0
+y1=0
+x1 = x
+y1 = y
 x = y1
 y = x1
+print(x,y)
 
 number = int(input())
-if number%==0:
+if number%2==0:
     print("Чётное число")
-if number%==1:
+if number%2==1:
     print("Нечётное число")
 
 seconds =  int(input())
