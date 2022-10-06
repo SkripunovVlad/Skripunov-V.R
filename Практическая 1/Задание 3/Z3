@@ -1,1 +1,7 @@
-
+age = int(input())
+name = str(input())
+if (age >= 16) and (name != "Иван") and (0 < age < 75):
+    print("Поздравляем вы поступили в ВГУИТ")
+else: 
+    print("Сначала нужно окончить школу!")
+    print(16 - age)
