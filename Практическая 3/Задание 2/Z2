@@ -1,4 +1,4 @@
-a = int(input())            
-b = int(input())
-S = 1/2 * a*b
-print(S)
+def F(a, b):
+  S = 1/2 * a*b
+  print(S)
+print(F(2,4))
