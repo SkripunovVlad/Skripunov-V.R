@@ -1,4 +1,4 @@
-def F(a, b, c, d)
+def F(a, b, c, d):
     x=a%2
     y=b%2
     z=c%2
