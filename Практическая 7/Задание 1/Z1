@@ -1,13 +1,13 @@
 
-a = []
-chet = []
-nechet = []
+pos_min, pos_max, value_min, value_max = 0, 0, l[0], l[0]
 
-def F(a):
-    for i in range(len(a)+1):
-      if a[i]%2==0:
-        chet = chet.append(a[i])
-      else:
-        nechet = nechet.append(a[i])
-      print(sum(chet), sum(nechet))
-print(F(a[3,5,6,7,8,9,8,12,45,78,89]))
+for i in range(len(l)):
+    if l[i] < value_min:
+        pos_min = i
+        value_min = l[i]
+
+    if l[i] > value_max:
+        pos_max = i
+        value_max = l[i]
+
+l[pos_min], l[pos_max] = value_max, value_min
