@@ -2,7 +2,7 @@ def F(x, y, c, d):
     n = (x + y) % 2
     n1 = (c + d) % 2
     if n == n1:
-        print('YES')
+        print('Да')
     else:
-        print('NO')
+        print('Нет')
 print(F(2, 5, 6, 7))
