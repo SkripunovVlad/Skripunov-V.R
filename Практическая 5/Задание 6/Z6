@@ -1,4 +1,4 @@
-def F(a): #a=0#
+def F(a): 
     b = -1
     while True:
         n = int(input())
@@ -7,4 +7,4 @@ def F(a): #a=0#
         if n == 0:
             break
     print(a/b)
-print(F(a))
+print(F(0))
