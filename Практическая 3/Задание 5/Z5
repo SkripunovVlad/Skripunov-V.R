@@ -5,5 +5,5 @@ def F(a, b, c):
        print(a)
    else:
        print(b)
-print(F(2, 5, 7))
+print(F(-5, 5, 7))
 
