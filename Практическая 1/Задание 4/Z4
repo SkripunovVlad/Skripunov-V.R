@@ -1,8 +1,8 @@
 seconds = int(input())
-print(seconds//86400,'дней')
+print('дни:', seconds//86400)
 seconds = seconds%86400
-print(seconds//3600,'часов')
+print('часы:', seconds//3600)
 seconds = seconds%3600
-print(seconds//60,'минут')
+print('минуты:', seconds//60)
 seconds = seconds%60
-print(seconds,'секунд')
+print('секунды:', seconds)
