@@ -1,1 +1,4 @@
-
+s = int(input())
+if s >=0:
+    s = oct(s)
+print(s)
