@@ -1,4 +1,4 @@
-def F(n):
+def F():
     n = int( input( 'Размер матрицы: ' ) )
     k = (n*n - n)//2 + n
     print( f'Введите {k} элементов матрицы: ' )
@@ -13,4 +13,4 @@ def F(n):
             m[j][i] = m[i][j]
     for row in m:
         print( row, sep='\t' )
-print(F(2))
+print(F())
