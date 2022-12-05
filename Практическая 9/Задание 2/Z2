@@ -4,4 +4,4 @@ def foo(matr):
     for i in range(n):
         res.append(matr[i][i])
     return res
-
+print(foo('5'))
