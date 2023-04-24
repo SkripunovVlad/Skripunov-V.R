@@ -1,7 +1,0 @@
-def F(i):
-    x = input()
-    while x!=0:
-        i+=1
-        x=int(input())
-    print('Количество членов последовательности:',i)
-print(F(0))

@@ -1,9 +1,0 @@
-def F(N):
-    ch = 0
-    for i in range(1000):
-        kv = ch*ch
-        if N>kv:
-            print(kv)
-        ch+=1
-print(F(90))
-  
