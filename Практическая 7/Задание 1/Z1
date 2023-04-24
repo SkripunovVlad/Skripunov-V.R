@@ -1,5 +1,0 @@
-from math import prod
-lst = [1, 7, 3, 5, 5, 0, 7, 1, 1, 2, 7, 1, 3] 
-print(sum(lst[i] for i in range(1, len(lst), 2)))
-print(prod(lst[j] for j in range(0, len(lst), 2)))
-lst[lst.index(min(lst))], lst[lst.index(max(lst))] = max(lst), min(lst)
