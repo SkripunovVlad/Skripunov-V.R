@@ -1,6 +1,0 @@
-x = int(input())
-y = int(input())
-m = x*y
-x = m/x
-y = m/y
-print(x,y)

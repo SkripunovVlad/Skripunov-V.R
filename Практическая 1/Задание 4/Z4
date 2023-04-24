@@ -1,8 +1,0 @@
-seconds = int(input())
-print('дни:', seconds//86400)
-seconds = seconds%86400
-print('часы:', seconds//3600)
-seconds = seconds%3600
-print('минуты:', seconds//60)
-seconds = seconds%60
-print('секунды:', seconds)
