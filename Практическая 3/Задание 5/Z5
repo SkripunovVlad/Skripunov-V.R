@@ -1,9 +1,0 @@
-def F(a, b, c):
-   if a>b>c:
-      print(c)
-   elif a<b<c:
-       print(a)
-   else:
-       print(b)
-print(F(-5, 5, 7))
-
