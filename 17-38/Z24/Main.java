@@ -16,17 +16,13 @@ public class Main {
         }
         int sum = 0;
         for (int i = m; i <= n; i++) {
-            boolean isDivisible = true;
             for (int j = 0; j < k; j++) {
-                if (i % divisors[j] != 0) {
-                    isDivisible = false;
+                if (i % divisors[j] == 0) {
+                    sum += i;
                     break;
                 }
             }
-            if (isDivisible) {
-                sum += i;
-            }
         }
-        System.out.println("Сумма чисел, делящихся на все делители: " + sum);
+        System.out.println("Сумма чисел, делящихся на один из делителей: " + sum);
     }
 }
