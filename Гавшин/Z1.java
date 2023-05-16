@@ -1,74 +1,76 @@
 import java.util.Random;
 
-public class Matrix {
-    private final int[][] ff;
-    private final int size;
-
-    public Matrix(int size) {
-        this.ff = new int[size][size];
-        this.size = size;
-        fillRandomNonZero();
-    }
-
-    private void fillRandomNonZero() {
-        Random random = new Random();
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                ff[i][j] = random.nextInt(10) + 1; // генерация чисел от 1 до 10
-            }
-        }
-    }
-
-    public void printElementsBelowDiagonal() {
-        int sum = 0;
-        for (int i = 1; i < size; i++) {
-            for (int j = 0; j < i; j++) {
-                System.out.print(ff[i][j] + " ");
-                sum += ff[i][j];
-            }
-            System.out.println();
-        }
-        System.out.println("Sum below diagonal: " + sum);
-    }
-
-    public void printDiagonal() {
-        int sum = 0;
-        for (int i = 0; i < size; i++) {
-            System.out.print(ff[i][i] + " ");
-            sum += ff[i][i];
-        }
-        System.out.println();
-        System.out.println("Diagonal sum: " + sum);
-    }
-
-    public void printStatistics() {
-        int sumBeforeDiagonal = 0;
-        int sumBelowDiagonal = 0;
-        int productDiagonal = 1;
-
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                if (i < j) {
-                    sumBeforeDiagonal += ff[i][j];
-                } else if (i > j) {
-                    sumBelowDiagonal += ff[i][j];
-                } else {
-                    productDiagonal *= ff[i][j];
-                }
-            }
-        }
-
-        System.out.println("Sum before diagonal: " + sumBeforeDiagonal);
-        System.out.println("Sum below diagonal: " + sumBelowDiagonal);
-        System.out.println("Product diagonal: " + productDiagonal);
-    }
-
+public class Main {
     public static void main(String[] args) {
         Matrix matrix = new Matrix(5);
+        matrix.fillRandomNonZero();
         matrix.printElementsBelowDiagonal();
         System.out.println();
         matrix.printDiagonal();
         System.out.println();
         matrix.printStatistics();
+    }
+}
+
+class Matrix {
+    private final int[][] matrix;
+    private final int size;
+    
+    public Matrix(int size) {
+        this.matrix = new int[size][size];
+        this.size = size;
+    }
+    
+    public void fillRandomNonZero() {
+        Random random = new Random();
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                matrix[i][j] = random.nextInt(10) + 1; // генерация чисел от 1 до 10
+            }
+        }
+    }
+    
+    public void printElementsBelowDiagonal() {
+        int sum = 0;
+        for (int i = 1; i < size; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(matrix[i][j] + " ");
+                sum += matrix[i][j];
+            }
+            System.out.println();
+        }
+        System.out.println("Sum below diagonal: " + sum);
+    }
+    
+    public void printDiagonal() {
+        int sum = 0;
+        for (int i = 0; i < size; i++) {
+            System.out.print(matrix[i][i] + " ");
+            sum += matrix[i][i];
+        }
+        System.out.println();
+        System.out.println("Diagonal sum: " + sum);
+    }
+    
+    public void printStatistics() {
+        int sumBeforeDiagonal = 0;
+        int sumBelowDiagonal = 0;
+        int productDiagonal = 1;
+        
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (i < j) {
+                    sumBeforeDiagonal += matrix[i][j];
+                } else if (i > j) {
+                    sumBelowDiagonal += matrix[i][j];
+                } else {
+                    productDiagonal *= matrix[i][j];
+                }
+            }
+        }
+        
+        System.out.println("Sum before diagonal: " + sumBeforeDiagonal);
+        System.out.println("Sum below diagonal: " + sumBelowDiagonal);
+        System.out.println("Product diagonal: " + productDiagonal);
     }
 }
