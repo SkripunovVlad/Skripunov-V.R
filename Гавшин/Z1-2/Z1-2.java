@@ -21,6 +21,7 @@ public class Matrix {
         int sum = 0;
         for (int i = 0; i < matrix.length; i++) {
             for (int j = i + 1; j < matrix[i].length; j++) {
+                sum+=matrix[i][j];
             }
         }
         return sum;
@@ -35,7 +36,6 @@ public class Matrix {
         return diff;
     }
     public void printMatrix() {
-
         System.out.println("Матрица:");
         for (int[] row : matrix) {
             for (int element : row) {
@@ -47,9 +47,8 @@ public class Matrix {
     public static void main(String[] args) {
         Matrix matrix = new Matrix(3);
         matrix.printMatrix();
-        System.out.println("Произведение главной диагонали:" + matrix.getDiagonalProduct());
-        System.out.println("Сумма выше диагонали:" + matrix.getUpperSum());
-        System.out.println("Разность под диагональю:" + matrix.getLowerDiff());
+        System.out.println("Произведение элементов главной диагонали:" + matrix.getDiagonalProduct());
+        System.out.println("Сумма элементов выше дигонали:" + matrix.getUpperSum());
+        System.out.println("Разность элементов ниже диагонали:" + matrix.getLowerDiff());
     }
-
-} 
+}
