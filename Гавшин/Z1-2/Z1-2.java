@@ -47,8 +47,8 @@ public class Matrix {
     public static void main(String[] args) {
         Matrix matrix = new Matrix(3);
         matrix.printMatrix();
-        System.out.println("Произведение элементов главной диагонали:" + matrix.getDiagonalProduct());
-        System.out.println("Сумма элементов выше дигонали:" + matrix.getUpperSum());
-        System.out.println("Разность элементов ниже диагонали:" + matrix.getLowerDiff());
+        System.out.println("Произведение чисел главной диагонали:" + matrix.getDiagonalProduct());
+        System.out.println("Сумма чисел выше дигонали:" + matrix.getUpperSum());
+        System.out.println("Разность чисел ниже диагонали:" + matrix.getLowerDiff());
     }
 }
