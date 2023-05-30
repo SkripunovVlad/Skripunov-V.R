@@ -10,14 +10,14 @@ public class Matrix {
             }
         }
     }
-    public int getDiagonalProduct() {
-        int product = 1;
+    public int M() {
+        int dpr = 1;
         for (int i = 0; i < matrix.length; i++) {
-            product *= matrix[i][i];
+            dpr *= matrix[i][i];
         }
-        return product;
+        return dpr;
     }
-    public int getUpperSum() {
+    public int H() {
         int sum = 0;
         for (int i = 0; i < matrix.length; i++) {
             for (int j = i + 1; j < matrix[i].length; j++) {
@@ -26,14 +26,14 @@ public class Matrix {
         }
         return sum;
     }
-    public int getLowerDiff() {
-        int diff = 0;
+    public int L() {
+        int vb = 0;
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < i; j++) {
-                diff -= matrix[i][j];
+                vb -= matrix[i][j];
             }
         }
-        return diff;
+        return vb;
     }
     public void printMatrix() {
         System.out.println("Матрица:");
@@ -47,8 +47,8 @@ public class Matrix {
     public static void main(String[] args) {
         Matrix matrix = new Matrix(3);
         matrix.printMatrix();
-        System.out.println("Произведение чисел главной диагонали:" + matrix.getDiagonalProduct());
-        System.out.println("Сумма чисел выше дигонали:" + matrix.getUpperSum());
-        System.out.println("Разность чисел ниже диагонали:" + matrix.getLowerDiff());
+        System.out.println("Произведение диагонали:" + matrix.M());
+        System.out.println("Сумма чисел выше дигонали:" + matrix.H());
+        System.out.println("Разность чисел ниже диагонали:" + matrix.L());
     }
 }
