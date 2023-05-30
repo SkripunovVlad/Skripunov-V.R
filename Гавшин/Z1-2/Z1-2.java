@@ -10,12 +10,14 @@ public class Matrix {
             }
         }
     }
-    public int M() {
-        int dpr = 1;
+    public int L() {
+        int v = 0;
         for (int i = 0; i < matrix.length; i++) {
-            dpr *= matrix[i][i];
+            for (int j = 0; j < i; j++) {
+                v -= matrix[i][j];
+            }
         }
-        return dpr;
+        return v;
     }
     public int H() {
         int sum = 0;
@@ -26,27 +28,24 @@ public class Matrix {
         }
         return sum;
     }
-    public int L() {
-        int vb = 0;
+    public int M() {
+        int d = 1;
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < i; j++) {
-                vb -= matrix[i][j];
-            }
+            d *= matrix[i][i];
         }
-        return vb;
+        return d;
     }
-    public void printMatrix() {
-        System.out.println("Матрица:");
+    public void print() {
         for (int[] row : matrix) {
-            for (int element : row) {
-                System.out.printf("%2d", element);
+            for (int el : row) {
+                System.out.printf("%2d", el);
             }
             System.out.println();
         }
     }
     public static void main(String[] args) {
         Matrix matrix = new Matrix(3);
-        matrix.printMatrix();
+        matrix.print();
         System.out.println("Произведение диагонали:" + matrix.M());
         System.out.println("Сумма чисел выше дигонали:" + matrix.H());
         System.out.println("Разность чисел ниже диагонали:" + matrix.L());
