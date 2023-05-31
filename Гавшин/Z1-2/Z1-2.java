@@ -1,6 +1,8 @@
 import java.util.Random;
+
 public class Matrix {
     private int[][] matrix;
+
     public Matrix(int size) {
         matrix = new int[size][size];
         Random random = new Random();
@@ -10,6 +12,7 @@ public class Matrix {
             }
         }
     }
+
     public int L() {
         int v = 0;
         for (int i = 0; i < matrix.length; i++) {
@@ -19,15 +22,17 @@ public class Matrix {
         }
         return v;
     }
+
     public int H() {
         int sum = 0;
         for (int i = 0; i < matrix.length; i++) {
             for (int j = i + 1; j < matrix[i].length; j++) {
-                sum+=matrix[i][j];
+                sum += matrix[i][j];
             }
         }
         return sum;
     }
+
     public int M() {
         int d = 1;
         for (int i = 0; i < matrix.length; i++) {
@@ -35,6 +40,15 @@ public class Matrix {
         }
         return d;
     }
+
+    public static void main(String[] args) {
+        Matrix matrix = new Matrix(3);
+        matrix.print();
+        System.out.println("Произведение диагонали: " + matrix.M());
+        System.out.println("Сумма чисел выше диагонали: " + matrix.H());
+        System.out.println("Разность чисел ниже диагонали: " + matrix.L());
+    }
+
     public void print() {
         for (int[] row : matrix) {
             for (int el : row) {
@@ -42,12 +56,5 @@ public class Matrix {
             }
             System.out.println();
         }
-    }
-    public static void main(String[] args) {
-        Matrix matrix = new Matrix(3);
-        matrix.print();
-        System.out.println("Произведение диагонали:" + matrix.M());
-        System.out.println("Сумма чисел выше дигонали:" + matrix.H());
-        System.out.println("Разность чисел ниже диагонали:" + matrix.L());
     }
 }
