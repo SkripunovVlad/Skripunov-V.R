@@ -1,0 +1,109 @@
+import java.util.ArrayList;
+import java.util.List;
+
+// Класс, представляющий маршрут поезда
+class TrainRoute {
+    private int trainNumber; // Номер поезда
+    private String routeName; // Название маршрута
+    private List<RoutePoint> routePoints; // Список точек маршрута
+
+    // Конструктор класса TrainRoute
+    public TrainRoute(int trainNumber, String routeName) {
+        this.trainNumber = trainNumber;
+        this.routeName = routeName;
+        this.routePoints = new ArrayList<>();
+    }
+
+    // Методы для управления пунктами маршрута
+
+    // Добавление новой точки маршрута
+    public void addRoutePoint(RoutePoint point) {
+        routePoints.add(point);
+    }
+
+    // Удаление точки маршрута
+    public void removeRoutePoint(RoutePoint point) {
+        routePoints.remove(point);
+    }
+
+    // Обновление точки маршрута по индексу
+    public void updateRoutePoint(int index, RoutePoint newPoint) {
+        routePoints.set(index, newPoint);
+    }
+
+    // Геттеры для получения информации о маршруте
+    public int getTrainNumber() {
+        return trainNumber;
+    }
+
+    public String getRouteName() {
+        return routeName;
+    }
+
+    public List<RoutePoint> getRoutePoints() {
+        return routePoints;
+    }
+}
+
+// Класс, представляющий точку маршрута (станцию)
+class RoutePoint {
+    private String stationName; // Название станции
+    private String arrivalTime; // Время прибытия
+    private String departureTime; // Время отправления
+
+    // Конструктор класса RoutePoint
+    public RoutePoint(String stationName, String arrivalTime, String departureTime) {
+        this.stationName = stationName;
+        this.arrivalTime = arrivalTime;
+        this.departureTime = departureTime;
+    }
+
+    // Геттеры для получения информации о точке маршрута
+    public String getStationName() {
+        return stationName;
+    }
+
+    public String getArrivalTime() {
+        return arrivalTime;
+    }
+
+    public String getDepartureTime() {
+        return departureTime;
+    }
+}
+
+// Основной класс приложения для управления маршрутами поездов
+public class TrainRouteApp {
+    public static void main(String[] args) {
+        // Создание объекта TrainRoute
+        TrainRoute trainRoute = new TrainRoute(101, "Экспресс маршрут");
+
+        // Создание нескольких точек маршрута
+        RoutePoint startPoint = new RoutePoint("Станция A", "08:00", "08:15");
+        RoutePoint midPoint = new RoutePoint("Станция B", "10:30", "10:45");
+        RoutePoint endPoint = new RoutePoint("Станция C", "13:00", "13:15");
+
+        // Добавление точек маршрута к объекту TrainRoute
+        trainRoute.addRoutePoint(startPoint);
+        trainRoute.addRoutePoint(midPoint);
+        trainRoute.addRoutePoint(endPoint);
+
+        // Добавление новой станции к маршруту
+        RoutePoint newStation = new RoutePoint("Новая станция", "15:00", "15:15");
+        trainRoute.addRoutePoint(newStation);
+
+        // Удаление станции из маршрута
+        trainRoute.removeRoutePoint(midPoint);
+
+        // Вывод информации о маршруте
+        System.out.println("Номер поезда: " + trainRoute.getTrainNumber());
+        System.out.println("Название маршрута: " + trainRoute.getRouteName());
+
+        System.out.println("Точки маршрута:");
+        List<RoutePoint> points = trainRoute.getRoutePoints();
+        for (RoutePoint point : points) {
+            System.out.println("Станция: " + point.getStationName() + ", Прибытие: " + point.getArrivalTime() +
+                    ", Отправление: " + point.getDepartureTime());
+        }
+    }
+}
